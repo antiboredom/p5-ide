@@ -1,0 +1,9 @@
+{
+  "name": "p5ide",
+  "version": "0.0.1",
+  "description": "an IDE for p5.js",
+  "author": "Sam Lavigne",
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  }
+}

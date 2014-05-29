@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Untitled</title>
+    <link rel="stylesheet" href="css/style.css" type="all" />
+    <script src="js/lib/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="toolbar"></div>
+    <div id="sidebar">
+      <ul>
+        <li><a href="">folder name</a>
+          <ul>
+            <li><a href="">file 1</a></li>
+            <li><a href="">file 2</a></li>
+            <li><a href="">file 3</a></li>
+            <li><a href="">file 4</a></li>
+          </ul>
+        </li>
+
+        <li><a href="">folder 2 name</a>
+          <ul>
+            <li><a href="">file 1</a></li>
+            <li><a href="">file 2</a></li>
+            <li><a href="">file 3</a></li>
+            <li><a href="">file 4</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <div id="main">
+      <div id="editor"></div>
+      <div id="debug-container">
+        <div id="drag"></div>
+        <div id="debug"></div>
+      </div>
+    </div>
+    <input style="display:none;" id="openFile" type="file" />
+    <input style="display:none;" id="saveFile" type="file" nwsaveas />
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
