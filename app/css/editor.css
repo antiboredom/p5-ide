@@ -15,7 +15,13 @@ body {
 #sidebar {
   width: 150px;
   background-color: #ccc;
-  display:none;
+  /*display:none;*/
+}
+
+#project-name {
+  padding-left: 30px;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 #main {
@@ -59,3 +65,6 @@ body {
   overflow-y: scroll;
 }
 
+.error {
+  color: red;
+}

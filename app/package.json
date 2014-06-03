@@ -1,8 +1,13 @@
 {
-  "name": "P5-JS-IDE",
+  "name": "p5",
   "version": "0.0.1",
   "main": "index.html",
   "window": {
-    "toolbar": false
+    "toolbar": false,
+    "frame": false,
+    "position": "center",
+    "width": 500,
+    "height": 300,
+    "resizable": false
   }
 }

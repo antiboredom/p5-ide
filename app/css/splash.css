@@ -1,0 +1,27 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font: 12px sans-serif;
+}
+
+#wrapper {
+  width: 300px;
+  margin: auto;
+  margin-top: 70px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 22px;
+  margin: 10px;
+}
+
+button {
+  background: #444;
+  color: #fff;
+  border: 0;
+  padding: 6px 12px;
+  font-size:16px;
+  border-radius: 4px;
+  margin: 10px;
+}

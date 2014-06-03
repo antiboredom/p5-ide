@@ -27,3 +27,9 @@ function start(code, path) {
   });
   server.listen(5000);
 }
+
+function copyFileSync(srcFile, destFile, encoding) {
+  var content = fs.readFileSync(srcFile, encoding);
+  fs.writeFileSync(destFile, content, encoding);
+}
+

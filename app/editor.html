@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Untitled</title>
+    <link rel="stylesheet" href="css/editor.css" type="all" />
+    <link rel="stylesheet" href="css/jqtree.css">
+    <script src="js/lib/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/lib/tree.jquery.js"></script>
+  </head>
+  <body>
+    <div id="toolbar"></div>
+    <div id="sidebar">
+      <h1 id="project-name"></h1>
+      <div id="filetree"></div>
+    </div>
+    <div id="main">
+      <div id="editor"></div>
+      <div id="debug-container">
+        <div id="drag"></div>
+        <div id="debug"></div>
+      </div>
+    </div>
+
+    <input style="display:none;" id="openFile" type="file" />
+    <input style="display:none;" id="saveFile" type="file" nwsaveas />
+
+    <script src="js/filetree.js"></script>
+    <script src="js/editor.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      var path = window.location.search.substring(1).split('=')[1];
+      var editor = new Editor(path);
+    </script>
+  </body>
+</html>
+
+
