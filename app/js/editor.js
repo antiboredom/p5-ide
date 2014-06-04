@@ -50,6 +50,7 @@ Editor.prototype.openProject = function() {
     var f = this.fileTree.files[i];
     if (f.label == 'sketch.js') {
       this.openFile(f.path);
+      this.fileTree.selectNodeByPath(f.path);
     }
   }
 };
@@ -177,7 +178,7 @@ Editor.prototype.run = function() {
       //'inject-js-start': 'js/errors.js'
     });
 
-    this.outputWin.on('loaded', function() {
+    this.outputWin.on('document-start', function() {
       this.window.onerror = function (msg, url, num) {
         $('#debug').append('<pre class="error">Line ' + num + ': ' + msg + '</pre>');
         $('#debug').scrollTop($('#debug')[0].scrollHeight);
@@ -328,22 +329,32 @@ Editor.prototype.setShortCuts = function() {
 
 }
 
-$('#drag').on('mousedown', function(e){
-  var $dragable = $(this).parent(),
-  handleHeight = $(this).height(),
-  startHeight = $dragable.height(),
-  pY = e.pageY;
+function makeDraggable(el, vertical) {
+  $(el).on('mousedown', function(e){
+    var $dragable = $(this).parent(),
+    handleDim = vertical ? $(this).height() : $(this).width(),
+    startDim = vertical ? $dragable.height() : $dragable.width(),
+    pY = vertical ? e.pageY : e.pageX;
 
-  $(document).on('mouseup', function(e){
-    $(document).off('mouseup').off('mousemove');
-  });
+    $(document).on('mouseup', function(e){
+      $(document).off('mouseup').off('mousemove');
+    });
 
-  $(document).on('mousemove', function(me){
-    var my = (me.pageY - pY);
-    if (startHeight - my >= handleHeight) {
-      $dragable.css({ height: startHeight - my });
-      editor.editor.resize();
-    }
+    $(document).on('mousemove', function(me){
+      var my = vertical ? (me.pageY - pY) : (pY - me.pageX);
+      if (startDim - my >= handleDim) {
+        if (vertical) $dragable.css({ height: startDim - my });
+        else $dragable.css({ width: startDim - my });
+        editor.editor.resize();
+      }
+    });
   });
+}
+
+makeDraggable('#debug-drag', true);
+makeDraggable('#sidebar-drag', false);
+
+$('#run').click(function(){
+  editor.run();
 });
 

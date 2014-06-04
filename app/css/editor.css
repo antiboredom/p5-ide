@@ -12,10 +12,24 @@ body {
   align-items: stretch;
 }
 
-#sidebar {
+#sidebar-container {
   width: 150px;
   background-color: #ccc;
   /*display:none;*/
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: flex-start;
+}
+
+#sidebar {
+  -webkit-flex: 1;
+}
+
+#sidebar-drag {
+  width: 7px;
+  -webkit-flex: none;
+  cursor: col-resize;
+  background-color: #999;
 }
 
 #project-name {
@@ -36,11 +50,16 @@ body {
    -webkit-flex: 1;
  }
 
+#actions {
+  margin-left: 30px;
+}
+
 #toolbar {
+  display:none;
   height: 40px;
   background-color: #333;
-  -webkit-flex: none;
-  display: none;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: flex-start;
 }
 
 #debug-container {
@@ -50,7 +69,7 @@ body {
   -webkit-justify-content: flex-start;
 }
 
-#drag {
+#debug-drag {
   background-color: #999;
   height: 7px;
   -webkit-flex: none;

@@ -9,15 +9,23 @@
     <script src="js/lib/tree.jquery.js"></script>
   </head>
   <body>
-    <div id="toolbar"></div>
-    <div id="sidebar">
-      <h1 id="project-name"></h1>
-      <div id="filetree"></div>
+    <div id="toolbar">
+    </div>
+    <div id="sidebar-container">
+      <div id="sidebar">
+        <h1 id="project-name"></h1>
+        <div id="actions">
+          <button id="run">Run</button>
+          <button id="stop">Stop</button>
+        </div>
+        <div id="filetree"></div>
+      </div>
+      <div id="sidebar-drag"></div>
     </div>
     <div id="main">
       <div id="editor"></div>
       <div id="debug-container">
-        <div id="drag"></div>
+        <div id="debug-drag"></div>
         <div id="debug"></div>
       </div>
     </div>

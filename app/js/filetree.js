@@ -58,8 +58,13 @@ FileTree.prototype.display = function() {
       }
     }
   );
-
 };
+
+FileTree.prototype.selectNodeByPath = function(path) {
+  var node = this.$tree.tree('getNodeByPath', path);
+  this.$tree.find('li').removeClass('selected');
+  $(node.element).addClass('selected');
+}
 
 function dirTree(filename) {
   var stats = fs.lstatSync(filename);
